@@ -116,6 +116,9 @@
             font-size: 16px;
             border-radius: 5px;
         }
+        .logo,img{
+            max-width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -129,7 +132,7 @@
     </nav>
 
     <div class="container">
-        <h1><img src="image/logo.png" alt=""></h1>
+        <h1 class="logo"><img src="image/logo.png" alt=""></h1>
         <textarea id="inputText" placeholder="Enter your text here..."></textarea>
         <button onclick="checkGrammar()">Check Grammar</button>
         <div id="result" class="result" style="display:none;"></div>
