@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write Right</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;\n
+            height: 100vh;\n
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        textarea {
+            width: 80%;
+            height: 150px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            width: 80%;
+            padding: 10px;
+            background: #e9ffe9;
+            border: 1px solid #8bc34a;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Write Right </h1>
+    <textarea id="inputText" placeholder="Enter your text here..."></textarea>
+    <button onclick="checkGrammar()">Check Grammar</button>
+    <div id="result" class="result" style="display:none;"></div>
+
+    <script>
+        async function checkGrammar() {
+            const inputText = document.getElementById('inputText').value;
+            const resultDiv = document.getElementById('result');
+
+            if (!inputText.trim()) {
+                resultDiv.style.display = 'block';
+                resultDiv.style.backgroundColor = '#ffe9e9';
+                resultDiv.style.border = '1px solid #e57373';
+                resultDiv.textContent = 'Please enter some text to check.';
+                return;
+            }
+
+            try {
+                const response = await fetch('https://api.languagetool.org/v2/check', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams({
+                        text: inputText,
+                        language: 'en-US'
+                    })
+                });
+
+                const data = await response.json();
+                let correctedText = inputText;
+
+                if (data.matches.length > 0) {
+                    data.matches.forEach(match => {
+                        correctedText = correctedText.replace(match.context.text, match.replacements[0]?.value || match.context.text);
+                    });
+                }
+
+                resultDiv.style.display = 'block';
+                resultDiv.style.backgroundColor = '#e9ffe9';
+                resultDiv.style.border = '1px solid #8bc34a';
+                resultDiv.textContent = correctedText || 'No suggestions found. Your text is good!';
+            } catch (error) {
+                resultDiv.style.display = 'block';
+                resultDiv.style.backgroundColor = '#ffe9e9';
+                resultDiv.style.border = '1px solid #e57373';
+                resultDiv.textContent = 'Error checking grammar. Please try again later.';
+                console.error('Grammar Check Error:', error);
+            }
+        }
+    </script>
+</body>
+</html>
