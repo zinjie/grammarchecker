@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/ico" href="image/write.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="members.css">
+    <title>Write Right</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .navbar {
+            background-color: #0d78c8;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .navbar h1 {
+            color: white;
+            margin: 0;
+            font-size: 24px;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links li {
+            display: inline;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease-in-out;
+        }
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .hamburger:hover {
+            transform: scale(1.1);
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+                background-color: #0056b3;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                padding: 15px 0;
+                text-align: center;
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+                pointer-events: none;
+            }
+            .nav-links.active {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .logo,img{
+            max-width: 100%;
+        }
+        .logonav,.imgnav{
+            max-width: 30%;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="logonav"><img src="image/logonav.png" alt="" class="imgnav"></h1>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Members</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
+    </nav>
+    <!-- Members content Start here -->
+    <h2>Thesis Members</h2>
+    <p>description </p>
+    <br>
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <img src="image/1.jpg" alt="yves" style="width:100%">
+          <div class="container">
+            <h2>Markyves Abragon </h2>
+            <p class="title">Position</p>
+            <p>description</p>
+            <p>email</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="column">
+        <div class="card">
+          <img src="image/1.jpg" alt="yves" style="width:100%">
+          <div class="container">
+            <h2>name</h2>
+            <p class="title">Position</p>
+            <p>description </p>
+            <p>email</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="card">
+          <img src="image/1.jpg" alt="yves" style="width:100%">
+          <div class="container">
+            <h2>name</h2>
+            <p class="title">Position</p>
+            <p>description </p>
+            <p>email</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
