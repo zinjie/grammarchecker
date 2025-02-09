@@ -1,235 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/ico" href="image/write.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="members.css">
-    <title>Members</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-        .navbar {
-            background-color: #0d78c8;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        .navbar h1 {
-            color: white;
-            margin: 0;
-            font-size: 24px;
-        }
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-        .nav-links li {
-            display: inline;
-        }
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease-in-out;
-        }
-        .nav-links a:hover {
-            color: #ffd700;
-        }
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 28px;
-            transition: transform 0.3s ease-in-out;
-        }
-        .hamburger:hover {
-            transform: scale(1.1);
-        }
-        @media (max-width: 768px) {
-            .nav-links {
-                display: flex;
-                flex-direction: column;
-                background-color: #0056b3;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                padding: 15px 0;
-                text-align: center;
-                opacity: 0;
-                transform: translateY(-10px);
-                transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-                pointer-events: none;
-            }
-            .nav-links.active {
-                opacity: 1;
-                transform: translateY(0);
-                pointer-events: auto;
-            }
-            .hamburger {
-                display: block;
-            }
-        }
-        .container {
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 20px;
-            background: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        textarea {
-            width: 100%;
-            height: 150px;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            resize: none;
-        }
-        button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 10px;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .result {
-            margin-top: 20px;
-            padding: 10px;
-            font-size: 16px;
-            border-radius: 5px;
-        }
-        .logo,img{
-            max-width: 100%;
-        }
-        .logonav,.imgnav{
-            max-width: 30%;
-            display: flex;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="sample.css">
+  
+  <title>Member</title>
 </head>
 <body>
-    <nav class="navbar">
-        <h1 class="logonav"><img src="image/logonav.png" alt="" class="imgnav"></h1>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="members.html">Members</a></li>
-        </ul>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
-    </nav>
-    <!-- Members content Start here -->
-    <h2>Meet My Team</h2>
-    <p>Our team is a mix of different skills and ideas, and that’s what makes us strong. We support each other, <br>share ideas, and tackle challenges together. By working as a team, we not only aim to succeed but also to learn and grow along the way</p>
-    <br><br>
-    <div class="row">
-      <div class="column">
-        <div class="card">
-          <img src="image/5.jpg" alt="Adelene" style="width:100%">
-          <div class="container">
-            <h2>Adelene Margarette O. Roman</h2>
-            <p class="title">Research Leader</p>
-            <p>I am a senior high school student at Pagbilao Academy, dedicated to learning and self-improvement. I actively participate in school projects and strive for excellence in my studies.</p>
-            <p>adelenewithastro@gmail.com</p>
-            <p><button class="button" onclick="window.open('https://www.facebook.com/adelene.kct', '_blank');">Contact</button></p>
+  <style>
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        text-align: center;
+        padding: 20px;
+    }
+    .navbar {
+        background-color: #0d78c8;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+    .navbar h1 {
+        color: white;
+        margin: 0;
+        font-size: 24px;
+    }
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+    .nav-links li {
+        display: inline;
+    }
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease-in-out;
+    }
+    .nav-links a:hover {
+        color: #ffd700;
+    }
+    .hamburger {
+        display: none;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 28px;
+        transition: transform 0.3s ease-in-out;
+    }
+    .hamburger:hover {
+        transform: scale(1.1);
+    }
+    @media (max-width: 768px) {
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            background-color: #0056b3;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            padding: 15px 0;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            pointer-events: none;
+        }
+        .nav-links.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .hamburger {
+            display: block;
+        }
+    }
+   
+    button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    .result {
+        margin-top: 20px;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+    .logo,img{
+        max-width: 100%;
+    }
+    .logonav,.imgnav{
+        max-width: 30%;
+        display: flex;
+    }
+</style>
+</head>
+<body>
+<nav class="navbar">
+    <h1 class="logonav"><img src="image/logonav.png" alt="" class="imgnav"></h1>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="members.html">Members</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
+</nav>
+  <section class="team text-center py-5">
+    <div class="container">
+      <div class="header my-5">
+        <h1>Meet our Team </h1>
+        <p class="text-muted">Meet and Greet our Team Members</p>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-3">
+          <div class="img-block mb-5">
+            <img src="image/5.jpg" class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+            <div class="content mt-2">
+              <h4>Adelene Margarette O. Roman</h4>
+              <p class="text-muted">Research Leader</p>
+            </div>
           </div>
         </div>
-      </div>
-    
-      <div class="column">
-        <div class="card">
-          <img src="image/1.jpg" alt="yves" style="width:100%">
-          <div class="container">
-            <h2>Markyves Abragon</h2>
-            <p class="title">Research Member</p>
-            <p>I am a senior high school student at Pagbilao Academy, dedicated to learning and self-improvement. I actively participate in school projects and strive for excellence in my studies. </p>
-            <p>markyvesabragon09@gmail.com</p>
-            <p><button class="button" onclick="window.open('https://www.facebook.com/markyves.abragon.71', '_blank');">Contact</button></p>
+        <div class="col-md-6 col-lg-2 ">
+          <div class="img-block mb-5">
+            <img src="image/1.jpg" class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+            <div class="content mt-2">
+              <h4>Markyves Abragon</h4>
+              <p class="text-muted">Research Member</p>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="column">
-        <div class="card">
-          <img src="image/2.jpg" alt="Sam" style="width:100%">
-          <div class="container">
-            <h2>Sam Sio</h2>
-            <p class="title">Research Member</p>
-            <p>I am a senior high school student at Pagbilao Academy, dedicated to learning and self-improvement. I actively participate in school projects and strive for excellence in my studies. </p>
-            <p>samflorence2006@gmail.com</p>
-            <p><button class="button" onclick="window.open('https://www.facebook.com/sam.florence.906', '_blank');">Contact</button></p>
+        <div class="col-md-6 col-lg-2">
+          <div class="img-block mb-5">
+            <img src="image/4.jpg" class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+            <div class="content mt-2">
+              <h4>Chrishia Harian C. Marfa</h4>
+              <p class="text-muted">Research Member</p>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="column">
-        <div class="card">
-          <img src="image/4.jpg" alt="Chrishia" style="width:100%">
-          <div class="container">
-            <h2>Chrishia Harian C. Marfa</h2>
-            <p class="title">Research Member</p>
-            <p>I am a senior high school student at Pagbilao Academy, dedicated to learning and self-improvement. I actively participate in school projects and strive for excellence in my studies. </p>
-            <p>chrishiaharian6@gmail.com</p>
-            <p><button class="button" onclick="window.open('https://www.facebook.com/1shaaang', '_blank');">Contact</button></p>
+        <div class="col-md-6 col-lg-2">
+          <div class="img-block mb-5">
+            <img src="image/3.jpg" class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+            <div class="content mt-2">
+              <h4>Jed Aldrin A. Luce</h4>
+              <p class="text-muted">Research Member</p>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div class="column">
-        <div class="card">
-          <img src="image/3.jpg" alt="Jed" style="width:100%">
-          <div class="container">
-            <h2>Jed Aldrin A. Luce</h2>
-            <p class="title">Research Member</p>
-            <p>I am a senior high school student at Pagbilao Academy, dedicated to learning and self-improvement. I actively participate in school projects and strive for excellence in my studies. </p>
-            <p>Jed_luce0706@gmail.com</p>
-            <p><button class="button" onclick="window.open('https://www.facebook.com/jedluce7', '_blank');">Contact</button></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="column">
-        <div class="card">
-          <img src="image/blank.jpg" alt="yves" style="width:100%">
-          <div class="container">
-            <h2>Name</h2>
-            <p class="title">Research Member</p>
-            <p>Description</p>
-            <p>email</p>
-            <p><button class="button" onclick="window.open('https://www.facebook.com/PagbilaoAcademyInc/', '_blank');">Contact</button></p>
+        <div class="col-md-6 col-lg-2">
+          <div class="img-block mb-5">
+            <img src="image/2.jpg" class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+            <div class="content mt-2">
+              <h4>Sam Sio</h4>
+              <p class="text-muted">Research Member</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('nav-links');
+  </section>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
 
-        hamburger.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            const isOpen = navLinks.classList.contains('active');
-            hamburger.setAttribute('aria-expanded', isOpen);
-        });
-    </script>
+    hamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        const isOpen = navLinks.classList.contains('active');
+        hamburger.setAttribute('aria-expanded', isOpen);
+    });
+</script>
 </body>
 </html>
