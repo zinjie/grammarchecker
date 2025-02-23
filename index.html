@@ -173,13 +173,13 @@
     }
 
     try {
-        const response = await fetch('https://api.languagetoolplus.com/v2/check', {
+        const response = await fetch('https://languagetool.codeph.net/v2/check', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: new URLSearchParams({
                     text: inputText,
                     language: 'en-US',
-                    enabledCategories: 'grammar,typos,style',
+                    enabledCategories: 'grammar,style,typo',
                     enabledOnly: 'false'
 })
 
